@@ -1,2 +1,2 @@
-# blog-next-js
+# Blog nextjs
 a blog made with nextjs
