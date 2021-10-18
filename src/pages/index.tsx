@@ -6,15 +6,7 @@ const Home: NextPage = () => {
   const { user, setUser } = useContext(UserContext);
   setUser('Paulo');
 
-  return (
-    <h1
-      style={{
-        color: 'white',
-      }}
-    >
-      {user}
-    </h1>
-  );
+  return <h1>{user}</h1>;
 };
 
 export default Home;
