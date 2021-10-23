@@ -1,34 +1,19 @@
 import type { GetStaticProps } from 'next';
 import { FunctionComponent } from 'react';
+import HomePage from '../containers/HomePage';
+import { getAllPosts } from '../data/posts/get-all-posts';
 import { PostData } from '../domain/posts/post';
-
-const getData = async (): Promise<PostData[]> => {
-  try {
-    const request = await fetch(process.env.NEXT_PUBLIC_URL);
-    const data: PostData[] = await request.json();
-
-    return data;
-  } catch (e) {
-    throw new Error('error');
-  }
-};
 
 type HomeProps = {
   posts: PostData[];
 };
 
 const Home: FunctionComponent<HomeProps> = ({ posts }) => {
-  return (
-    <ul>
-      {posts.map((post) => (
-        <li key={post.id}>{post.title}</li>
-      ))}
-    </ul>
-  );
+  return <HomePage posts={posts} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getData();
+  const posts = await getAllPosts();
 
   return {
     props: { posts },
