@@ -1,5 +1,8 @@
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
+import PostCard from '../../components/PostCard/PostCard';
 import { PostData } from '../../domain/posts/post';
-import { Container } from './styles';
+import { MainContainer } from './styles';
 
 export type HomePageProps = {
   posts: PostData[];
@@ -7,12 +10,19 @@ export type HomePageProps = {
 
 export default function HomePage({ posts }: HomePageProps) {
   return (
-    <Container>
-      <ul>
+    <>
+      <Header />
+      <MainContainer>
         {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
+          <PostCard
+            slug={post.slug}
+            key={post.id}
+            image={post.cover.formats.medium.url}
+            title={post.title}
+          />
         ))}
-      </ul>
-    </Container>
+      </MainContainer>
+      <Footer />
+    </>
   );
 }

@@ -14,7 +14,6 @@ const Home: FunctionComponent<HomeProps> = ({ posts }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPosts();
-
   return {
     props: { posts },
   };
