@@ -14,4 +14,9 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     cursor: pointer;
   }
+
+  a:hover, button:hover {
+    opacity: 0.8;
+    transition: opacity 300ms ease-in-out;
+  }
 `;

@@ -49,7 +49,7 @@ export const Menu = styled.div<isOpenType>`
     padding: 0.85rem;
 
     a {
-      color: ${(props) => props.theme.colors.primaryBackgroundColor};
+      color: ${(props) => props.theme.colors.primaryBackgroundColor} !important;
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 25px;

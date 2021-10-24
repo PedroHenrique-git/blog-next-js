@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { SITE_NAME } from '../../config/app-config';
 import useWindowSize from '../../hooks/useWindowSize';
 import DesktopMenu from './DesktopMenu/DesktopMenu';
 import OpenClosedButton from './MobileMenu/OpenClosedButton';
@@ -8,7 +10,11 @@ export default function Header() {
 
   return (
     <HeaderContainer>
-      <h1 className="title">Blog next js</h1>
+      <Link href="/">
+        <a>
+          <h1 className="title">{SITE_NAME}</h1>
+        </a>
+      </Link>
       {width >= 1025 ? <DesktopMenu /> : <OpenClosedButton />}
     </HeaderContainer>
   );

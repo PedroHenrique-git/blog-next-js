@@ -8,7 +8,7 @@ export const PostWrap = styled.div`
 
   &:hover {
     opacity: 0.8;
-    transition: all 0.1s ease;
+    transition: opacity 300ms ease-in-out;
   }
 
   h3 {
