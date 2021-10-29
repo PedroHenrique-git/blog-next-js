@@ -10,10 +10,10 @@ interface PostCard {
 
 export default function PostCard({ image, slug, title }: PostCard) {
   return (
-    <Link href={`${slug}`}>
+    <Link href="/post/[slug]" as={`/post/${slug}`}>
       <a>
         <PostWrap>
-          <Image src={image} alt="post image" width="400" height="200" />
+          <Image src={image} alt={`${title}`} width="400" height="200" />
           <h3>{title}</h3>
         </PostWrap>
       </a>
