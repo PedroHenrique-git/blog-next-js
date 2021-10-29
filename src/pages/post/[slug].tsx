@@ -1,4 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 import { countAllPosts } from '../../data/posts/count-all-posts';
 import { getAllPosts } from '../../data/posts/get-all-posts';
 import { getPost } from '../../data/posts/get-post';
@@ -9,7 +11,14 @@ export type DynamicPostProps = {
 };
 
 export default function DynamicPost({ post }: DynamicPostProps) {
-  return <p>{post.title}</p>;
+  return (
+    <>
+      <Header />
+      <p>{post.title}</p>
+      <p dangerouslySetInnerHTML={{ __html: post.content }} />
+      <Footer />
+    </>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
