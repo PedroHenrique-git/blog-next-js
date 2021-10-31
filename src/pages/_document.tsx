@@ -3,6 +3,7 @@ import Document, {
   Head,
   Html,
   Main,
+  // eslint-disable-next-line prettier/prettier
   NextScript
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
