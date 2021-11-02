@@ -8,6 +8,9 @@ export const getPost = async (slug: string | string[]) => {
     const slugString = Array.isArray(slug) ? slug[0] : slug;
     const url = `${POSTS_URL}?slug=${slugString}`;
     const jsonPost = await fetchJson<PostData[]>(url);
+
+    if (!jsonPost.length) return jsonPost;
+
     const content = await markDownToHtml(jsonPost[0].content);
     const finalContent = { ...jsonPost[0], content };
     return [finalContent];
