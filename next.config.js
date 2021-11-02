@@ -6,4 +6,5 @@ module.exports = {
     path: '',
     domains: ['res.cloudinary.com'],
   },
+  target: 'serverless',
 };
