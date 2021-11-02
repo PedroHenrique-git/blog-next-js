@@ -14,3 +14,11 @@ export const MainContainer = styled.section`
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 `;
+
+export const Category = styled.div`
+  text-align: center;
+  font-size: 1.4rem;
+  color: #1c2225;
+  margin: 1rem 0;
+  font-weight: bold;
+`;

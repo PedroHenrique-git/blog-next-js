@@ -4,13 +4,14 @@ import Header from '../../components/Header/Header';
 import PostCard from '../../components/PostCard/PostCard';
 import { SITE_NAME } from '../../config/app-config';
 import { PostData } from '../../domain/posts/post';
-import { MainContainer } from './styles';
+import { Category, MainContainer } from './styles';
 
 export type HomePageProps = {
   posts: PostData[];
+  category?: string;
 };
 
-export default function HomePage({ posts }: HomePageProps) {
+export default function HomePage({ posts, category }: HomePageProps) {
   return (
     <>
       <Head>
@@ -18,6 +19,7 @@ export default function HomePage({ posts }: HomePageProps) {
         <meta name="description" content="blog made with next and strapi" />
       </Head>
       <Header />
+      {category && <Category>Categoria: {category.toLowerCase()}</Category>}
       <MainContainer>
         {posts.map((post) => (
           <PostCard
