@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PostWrap } from './styles';
 
-interface PostCard {
+interface PostCardProps {
   title: string;
   image: string;
   slug: string;
 }
 
-export default function PostCard({ image, slug, title }: PostCard) {
+export default function PostCard({ image, slug, title }: PostCardProps) {
   return (
     <Link href="/post/[slug]" as={`/post/${slug}`}>
       <a>
